@@ -1,1 +1,13 @@
 # Playwright-learning
+name: CI 
+on: [push, pull_request] 
+jobs: 
+build: 
+runs-on: ubuntu-latest 
+steps: - uses: actions/checkout@v2 - name: Set up Node.js 
+uses: actions/setup-node@v2 
+with: 
+node-version: '18' - name: Install dependencies 
+run: npm install - name: Install Playwright Browsers 
+run: npx playwright install --with-deps - name: Run tests 
+run: npm test
