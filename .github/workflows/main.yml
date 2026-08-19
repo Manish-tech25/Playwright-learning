@@ -3,7 +3,9 @@ on: [push, pull_request]
 jobs: 
 build: 
 runs-on: ubuntu-latest 
-steps: - uses: actions/checkout@v2 - name: Set up Node.js 
+steps: 
+- uses: actions/checkout@v2 
+- name: Set up Node.js 
 uses: actions/setup-node@v2 
 with: 
 node-version: '18' - name: Install dependencies 
